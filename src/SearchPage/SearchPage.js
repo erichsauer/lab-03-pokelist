@@ -31,7 +31,9 @@ export default class SearchPage extends Component {
     }
             
     render() {
-        // this.state.pokemon[this.state.sortBy].sort((a, b) => a[this.state.sortBy] - b[this.state.sortBy])
+        // (isNaN(this.state.sortBy) && this.state.pokemon.sort((a, b) => a[this.state.sortBy].localeCompare(b[this.state.sortBy])))
+
+        // (isNaN(this.state.sortBy) && this.state.pokemon.sort((a, b) => a[this.state.sortBy] - b[this.state.sortBy]))
 
         const filteredByName = this.state.pokemon.filter(pokemon => 
             pokemon.pokemon.includes(this.state.filter))

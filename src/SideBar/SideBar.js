@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import DropDown from '../DropDown/DropDown'
 
-const sortByOptions = ['Name', 'Type', 'Attack', 'Defense'];
+const sortByDisplayOptions = ['Name', 'Type 1', 'Type 2', 'Attack', 'Defense'];
+const sortByOptions = ['pokemon', 'type_1', 'type_2', 'attack', 'defense'];
 const sortOrderOptions = ['Ascending', 'Descending']
 
 export default class SideBar extends Component {
@@ -10,8 +11,8 @@ export default class SideBar extends Component {
             <div className='SideBar'>
                 <form>
                     <input placeholder='Search by keyword' onChange={this.props.handleFilter} value={this.props.state.filterBy} />
-                    <DropDown options={sortByOptions} onChange={this.props.handleSortBy} value={this.props.state.sortBy}/>
-                    <DropDown options={sortOrderOptions} onChange={this.props.handleSortOrder} value={this.props.state.sortOrder}/>
+                    <DropDown options={sortByDisplayOptions} onChange={this.props.handleSortBy} value={this.props.state.sortBy} valueOptions={sortByOptions}/>
+                    <DropDown options={sortOrderOptions} onChange={this.props.handleSortOrder} value={this.props.state.sortOrder} valueOptions={sortOrderOptions}/>
                 </form>
             </div>
         )
