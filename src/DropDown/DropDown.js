@@ -7,7 +7,6 @@ export default class DropDown extends Component {
         })
         return (
             <select onChange={this.props.onChange} value={this.props.value}>
-                <option value=''>Select</option>
                 {options}
             </select>
         )

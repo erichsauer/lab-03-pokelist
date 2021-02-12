@@ -29,12 +29,15 @@ export default class SearchPage extends Component {
     handleFilter = (e) => {
         this.setState({ filter: e.target.value })
     }
-            
+        
     render() {
-        // (isNaN(this.state.sortBy) && this.state.pokemon.sort((a, b) => a[this.state.sortBy].localeCompare(b[this.state.sortBy])))
-
-        // (isNaN(this.state.sortBy) && this.state.pokemon.sort((a, b) => a[this.state.sortBy] - b[this.state.sortBy]))
-
+        // is the data type that we're sorting by a number? if not sort by localCompare
+        (isNaN(pokemonArray[0][this.state.sortBy])) ? this.state.pokemon.sort((a, b) => a[this.state.sortBy].localeCompare(b[this.state.sortBy])) : 
+        // if it is, sort by a - b
+            this.state.pokemon.sort((a, b) => a[this.state.sortBy] - b[this.state.sortBy])
+        
+        // (isNaN(this.state.pokemon[0][this.state.sortBy])) && this.state.pokemon.sort((a, b) => a[this.state.sortBy].localeCompare(b[this.state.sortBy]))
+            
         const filteredByName = this.state.pokemon.filter(pokemon => 
             pokemon.pokemon.includes(this.state.filter))
         
