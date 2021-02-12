@@ -22,13 +22,13 @@ export default class App extends Component {
               <Route 
                 path="/" 
                 exact
-                render={(routerProps) => <HomePage {...routerProps} />} 
+                render={(routerProps) => <SearchPage {...routerProps} />} 
               />
-              <Route 
+              {/* <Route 
                 path="/search" 
                 exact
                 render={(routerProps) => <SearchPage {...routerProps} />} 
-              />
+              /> */}
             </Switch>
           <Footer />
         </Router>
