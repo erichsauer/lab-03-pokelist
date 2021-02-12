@@ -11,7 +11,6 @@ import SearchPage from './SearchPage/SearchPage';
 import HomePage from './HomePage/HomePage';
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
-import SideBar from './SideBar/SideBar';
 
 export default class App extends Component {
   render() {
