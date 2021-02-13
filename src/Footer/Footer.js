@@ -5,7 +5,7 @@ export default class Footer extends Component {
     render() {
         return (
             <div className='Footer'>
-                Footer Stuff!
+                <img className='grass' alt='grassyness' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fclipart-grass-clear-background-4.png&f=1&nofb=1'></img>
             </div>
         )
     }

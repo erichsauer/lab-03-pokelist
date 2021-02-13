@@ -11,7 +11,7 @@ export default class SideBar extends Component {
         return (
             <div className='SideBar'>
                 <form>
-                    <input placeholder='Search by keyword' onChange={this.props.handleFilter} value={this.props.state.filterBy} />
+                    <input placeholder='🔎' onChange={this.props.handleFilter} value={this.props.state.filterBy} />
                     <DropDown options={sortByDisplayOptions} onChange={this.props.handleSortBy} value={this.props.state.sortBy} valueOptions={sortByOptions}/>
                     <DropDown options={sortOrderDisplayOptions} onChange={this.props.handleSortOrder} value={this.props.state.sortOrder} valueOptions={sortOrderOptions}/>
                 </form>
