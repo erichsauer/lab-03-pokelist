@@ -1,20 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Reggae+One&display=swap');
+* {
+  box-sizing: border-box;
+}
 
 .App {
   display: grid;
   grid-template-rows: 10vh 85vh 5vh;
-  background-color: lightseagreen;
-  height: 100vh;
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .SearchPage {
   grid-row: 2 / 3;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 20vw 80vw;
+  width: 100vw;
 }
 
 .HomePage {
   grid-row: 2 / 3;
+  width: 100vw;
+  background-image: url('https://wallpapercave.com/wp/t7peS7Z.jpg');
+  background-size: auto 100%;
+  background-position: center;
 }
 
 .Header {
@@ -25,26 +34,65 @@
   background-color: lightpink;
   color: white;
   font-family: 'Reggae One';
-  font-size: 2rem;
-  text-shadow: palevioletred 2px 2px;
+  font-size: 8vw;
+  text-shadow: palevioletred .05em .05em;
   padding-left: 2vw;
+  height: 10vh;
+  width: 100%;
+  position: relative;
+  box-shadow: 5vh 0vh 5vh white;
+  border-top: hotpink solid .5vh;
+  border-bottom: hotpink solid .5vh;
+}
+
+.link {
+  display: flex;
+  width: 20vw;
+  height: 10vw;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  right: 3vw;
+}
+
+.pokeball {
+  max-height: 8vw;
+  animation: App-logo-spin infinite 10s linear;
+  
 }
 
 .Footer {
   display: flex;
+  height: 5vh;
+  width: 100%;
   position: relative;
 }
 
-.grass {
-  width: 100%;
+.grass-container {
+  display: flex;
   position: absolute;
   bottom: 0px;
+  left: 0px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.grass {
+  height: 15vh;
 }
 
 .SideBar {
   display: flex;
   grid-column: 1 / 2;
   background-color: mediumslateblue;
+}
+
+.label {
+  color: white;
+  font-weight: bold;
+  margin-top: 2vh;
+  text-align: center;
+  margin-bottom: 1vh;
 }
 
 input {
@@ -61,6 +109,7 @@ select {
   background-color: mediumslateblue;
   color: white;
   border: none;
+  font-size: 1em;
 }
 
 .results-div {
@@ -69,21 +118,23 @@ select {
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background-color: lightskyblue;
-  overflow-x: hidden;
+  background-color: lightblue;
   overflow-y: auto;
   max-height: 100%;
-  padding-bottom: 10vh;
-  padding-top: 2vw;
+  padding: 3vw;
+  padding-bottom: 10vw;
+  max-width: 100%;
 }
 
 .poke-item {
   width: 125px;
   height: 125px;
-  border: solid 2px white;
+  border: solid .3em white;
   color: white;
   text-align: center;
-  margin: 2vw;
+  margin: 1vw;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
   background-color: paleturquoise;
   border-radius: 5% 5% 50% 50%;
   background-image: url('https://img1.picmix.com/output/stamp/normal/0/4/0/3/653040_2134b.gif');
@@ -110,12 +161,6 @@ select {
   font-weight: bolder;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -123,4 +168,4 @@ select {
   to {
     transform: rotate(360deg);
   }
-} */
+}
