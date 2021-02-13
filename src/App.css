@@ -48,14 +48,14 @@
 .link {
   display: flex;
   width: 20vw;
-  height: 10vw;
   align-items: center;
   justify-content: space-evenly;
   position: absolute;
-  right: 3vw;
+  right: 0vw;
 }
 
 .pokeball {
+  margin-top: 2vh;
   max-height: 8vw;
   animation: App-logo-spin infinite 10s linear;
   
