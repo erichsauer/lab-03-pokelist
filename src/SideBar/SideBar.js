@@ -12,6 +12,9 @@ export default class SideBar extends Component {
             <div className='SideBar'>
                 <form>
                     <input placeholder='🔎' onChange={this.props.handleFilter} value={this.props.state.filterBy} />
+                    <div className='label'>
+                        Sort by
+                    </div>
                     <DropDown options={sortByDisplayOptions} onChange={this.props.handleSortBy} value={this.props.state.sortBy} valueOptions={sortByOptions}/>
                     <DropDown options={sortOrderDisplayOptions} onChange={this.props.handleSortOrder} value={this.props.state.sortOrder} valueOptions={sortOrderOptions}/>
                 </form>
