@@ -48,14 +48,14 @@
 .link {
   display: flex;
   width: 20vw;
-  height: 10vw;
   align-items: center;
   justify-content: space-evenly;
   position: absolute;
-  right: 3vw;
+  right: 0vw;
 }
 
 .pokeball {
+  margin-top: 2vh;
   max-height: 8vw;
   animation: App-logo-spin infinite 10s linear;
   
@@ -85,6 +85,8 @@
   display: flex;
   grid-column: 1 / 2;
   background-color: mediumslateblue;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .label {
@@ -95,7 +97,7 @@
   margin-bottom: 1vh;
 }
 
-input {
+input, button {
   height: 2rem;
   font-size: 1rem;
   text-align: center;
@@ -112,13 +114,25 @@ select {
   font-size: 1em;
 }
 
+.loading-spinner {
+  animation: App-logo-spin infinite 1s linear;
+  width: 30%;
+}
+
+.spinner-container {
+  background-color: lightblue;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
 .results-div {
   grid-column: 2 / 3;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background-color: lightblue;
+  background-color: skyblue;
   overflow-y: auto;
   max-height: 100%;
   padding: 3vw;
@@ -126,19 +140,23 @@ select {
   max-width: 100%;
 }
 
-.poke-item {
-  width: 125px;
-  height: 125px;
+.poke-item, .pokedex-item {
+  width: 175px;
+  height: 150px;
   border: solid .3em white;
   color: white;
   text-align: center;
   margin: 1vw;
   margin-top: 3vw;
   margin-bottom: 3vw;
-  background-color: paleturquoise;
+  background-color: black;
   border-radius: 5% 5% 50% 50%;
   background-image: url('https://img1.picmix.com/output/stamp/normal/0/4/0/3/653040_2134b.gif');
   background-size: 100% 100%;
+}
+
+.pokedex-item {
+  background-color: black;
 }
 
 .poke-image {
