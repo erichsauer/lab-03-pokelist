@@ -5,7 +5,7 @@
 
 .App {
   display: grid;
-  grid-template-rows: 10vh 85vh 5vh;
+  grid-template-rows: 3em 90vh 10vh;
   max-height: 100vh;
   max-width: 100vw;
   overflow: hidden;
@@ -14,7 +14,7 @@
 .SearchPage {
   grid-row: 2 / 3;
   display: grid;
-  grid-template-columns: 20vw 80vw;
+  grid-template-columns: 30vw 70vw;
   width: 100vw;
 }
 
@@ -34,10 +34,10 @@
   background-color: lightpink;
   color: white;
   font-family: 'Reggae One';
-  font-size: 8vw;
+  font-size: 2em;
   text-shadow: palevioletred .05em .05em;
   padding-left: 2vw;
-  height: 10vh;
+  height: 100%;
   width: 100%;
   position: relative;
   box-shadow: 5vh 0vh 5vh white;
@@ -52,13 +52,26 @@
   justify-content: space-evenly;
   position: absolute;
   right: 0vw;
+  font-size: 1rem;
+}
+
+.pokeball-container {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+color: white;
+}
+
+.pokeball-span {
+  font-size: .75em;
+  font-style: italic;
 }
 
 .pokeball {
-  margin-top: 2vh;
-  max-height: 8vw;
-  animation: App-logo-spin infinite 10s linear;
-  
+  max-height: 3em;
+  animation: App-logo-spin infinite 5s linear;
+  margin: .5em;
 }
 
 .Footer {
@@ -87,14 +100,35 @@
   background-color: mediumslateblue;
   overflow-y: auto;
   max-height: 100%;
+justify-content: center;}
+
+form {
+  width: 100%;
 }
 
-.label {
+.label, .radio-label {
   color: white;
   font-weight: bold;
   margin-top: 2vh;
   text-align: center;
   margin-bottom: 1vh;
+}
+
+.radio-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.radio-label {
+  font-size: .75em;
+  max-width: 33%;
+}
+
+.radio-option {
+  max-width: 100%;
+  margin: 0px;
+  margin-top: 5px;
 }
 
 input, button {
@@ -103,6 +137,7 @@ input, button {
   text-align: center;
   width: 100%;
   border: none;
+  background-color: white;
 }
 
 select {
@@ -115,7 +150,7 @@ select {
 }
 
 .loading-spinner {
-  animation: App-logo-spin infinite 1s linear;
+  animation: App-logo-spin infinite .25s linear;
   width: 30%;
 }
 
@@ -140,7 +175,7 @@ select {
   max-width: 100%;
 }
 
-.poke-item, .pokedex-item {
+.poke-item, .poke-ball-item {
   width: 175px;
   height: 150px;
   border: solid .3em white;
@@ -148,20 +183,20 @@ select {
   text-align: center;
   margin: 1vw;
   margin-top: 3vw;
-  margin-bottom: 3vw;
+  margin-bottom: 5vw;
   background-color: black;
   border-radius: 5% 5% 50% 50%;
   background-image: url('https://img1.picmix.com/output/stamp/normal/0/4/0/3/653040_2134b.gif');
   background-size: 100% 100%;
 }
 
-.pokedex-item {
-  background-color: black;
+.poke-ball-item {
+  background-color: white;
 }
 
 .poke-image {
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
   margin-top: 10px;
 }
 
@@ -177,6 +212,11 @@ select {
   background-color: white;
   color: skyblue;
   font-weight: bolder;
+}
+
+.divider {
+  height: 3px;
+  margin-bottom: 1em;
 }
 
 @keyframes App-logo-spin {

@@ -14,9 +14,10 @@ export default class SearchPage extends Component {
         sortBy: 'pokemon',
         sortOrder: 'asc',
         filter: '',
-        filter2: '',
+        filter2: 'NA',
         loading: false,
-        radio: ''
+        radio: '',
+        pokeBallView: false,
     }
     // everything containing an await must be declared async
     componentDidMount = async () => {
@@ -60,10 +61,18 @@ export default class SearchPage extends Component {
         this.setState({ radio: e.target.value })
     }
 
-    handleAddToPokeBall = (e, pokemon) => {
+    handleAddToPokeBall = (e, pokemon, className) => {
         const pokeBall = this.state.pokeBall;
+        pokemon.class = true
         pokeBall.push(pokemon);
         this.setState({ pokeBall: pokeBall })
+    }
+
+    handlePokeBallDisplay = async (e) => {
+        e.preventDefault();
+        !this.state.pokeBallView ? 
+        this.setState({ pokeBallView: true }) :
+        this.setState({ pokeBallView: false })
     }
 
     handleClick = async (e) => {
@@ -85,11 +94,18 @@ export default class SearchPage extends Component {
                     handleFilter2={this.handleFilter2}
                     handleClick={this.handleClick}
                     handleRadio={this.handleRadio}
+                    handlePokeBallDisplay={this.handlePokeBallDisplay}
                 />
-                {this.state.loading ?
-                    <LoadingSpinner /> :
+                {!this.state.pokeBallView ?
+                    this.state.loading ?
+                        <LoadingSpinner /> :
+                        <PokeList
+                            filteredPokemon={this.state.pokemon}
+                            state={this.state}
+                            handleAddToPokeBall={this.handleAddToPokeBall}
+                        /> :
                     <PokeList
-                        filteredPokemon={this.state.pokemon}
+                        filteredPokemon={this.state.pokeBall}
                         state={this.state}
                         handleAddToPokeBall={this.handleAddToPokeBall}
                     />}
