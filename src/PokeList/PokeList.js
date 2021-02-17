@@ -10,7 +10,7 @@ export default class PokeList extends Component {
                 src={pokemon.url_image}
                 alt={pokemon.pokedex}
                 onClick={(e) => this.props.handleAddToPokeBall(e, pokemon)}
-                class={'poke-item'}
+                class={pokemon.class ? 'poke-ball-item' : 'poke-item'}
                 // if the selected 'sort by' is 'pokemon' then don't display it or the stat on the pokedex card
                 statLabel={this.props.state.sortBy === 'pokemon' ?
                     '' :
