@@ -5,10 +5,33 @@
 
 .App {
   display: grid;
-  grid-template-rows: 3em 90vh 10vh;
+  grid-template-rows: 4em 90vh 10vh;
   max-height: 100vh;
   max-width: 100vw;
   overflow: hidden;
+  background-position: cover;
+  background-size: 100vw 100vh;
+  background-image: url('https://cdn.wallpapersafari.com/45/95/wA5CBG.jpg');
+}
+
+Header {
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-bottom: hotpink solid .5em;
+}
+
+.header {
+  color: white;
+  font-family: 'Reggae One';
+  font-size: 2em;
+  text-shadow: hotpink .05em .05em;
+  padding-left: 2vw;
+  width: 100%;
 }
 
 .SearchPage {
@@ -24,25 +47,6 @@
   background-image: url('https://wallpapercave.com/wp/t7peS7Z.jpg');
   background-size: auto 100%;
   background-position: center;
-}
-
-.Header {
-  grid-row: 1 / 2;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: lightpink;
-  color: white;
-  font-family: 'Reggae One';
-  font-size: 2em;
-  text-shadow: palevioletred .05em .05em;
-  padding-left: 2vw;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  box-shadow: 5vh 0vh 5vh white;
-  border-top: hotpink solid .5vh;
-  border-bottom: hotpink solid .5vh;
 }
 
 .link {
@@ -97,10 +101,10 @@ color: white;
 .SideBar {
   display: flex;
   grid-column: 1 / 2;
-  background-color: mediumslateblue;
   overflow-y: auto;
   max-height: 100%;
-justify-content: center;}
+  justify-content: center;
+}
 
 form {
   width: 100%;
@@ -143,7 +147,7 @@ input, button {
 select {
   height: 2rem;
   width: 100%;
-  background-color: mediumslateblue;
+  background-color: hotpink;
   color: white;
   border: none;
   font-size: 1em;
@@ -155,39 +159,41 @@ select {
 }
 
 .spinner-container {
-  background-color: lightblue;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+
 }
 
 .results-div {
   grid-column: 2 / 3;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  background-color: skyblue;
   overflow-y: auto;
   max-height: 100%;
   padding: 3vw;
   padding-bottom: 10vw;
   max-width: 100%;
+
 }
 
-.poke-item, .poke-ball-item {
+.poke-item, .poke-ball-item, .detail-item {
   width: 175px;
-  height: 150px;
+  height: 200px;
   border: solid .3em white;
   color: white;
   text-align: center;
-  margin: 1vw;
+  margin: 20px;
   margin-top: 3vw;
   margin-bottom: 5vw;
   background-color: black;
-  border-radius: 5% 5% 50% 50%;
+  border-radius: 10% 10% 75% 75%;
   background-image: url('https://img1.picmix.com/output/stamp/normal/0/4/0/3/653040_2134b.gif');
   background-size: 100% 100%;
+  position: relative;
+  cursor: pointer;
 }
 
 .poke-ball-item {
@@ -200,18 +206,75 @@ select {
   margin-top: 10px;
 }
 
-.poke-stat {
+.poke-stat, .details-link, .add-link, .detail-stat{
   font-size: .5rem;
   text-transform: capitalize;
-  height: 1rem;
-  background-color: white;
-  color: darkslategray;
+  height: fit-content;
+  color: black;
+  margin: 2px;
 }
 
-.poke-name {
+.text-container, .detail-container {
+  height: 60px;
+  margin-top: 20px;
   background-color: white;
-  color: skyblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.detail-item {
+  width: 60%;
+  height: 80%;
+  background-color: white;
+}
+
+.DetailPage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-container {
+  flex-direction: row;
+  height: fit-content;
+  width: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.detail-stat {
+  height: 40px;
+  margin: 5px;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exit {
+  position: absolute;
+  right: -30px;
+  cursor: pointer;
+  color: white;
+}
+
+.poke-name, .detail-name {
+  color: black;
   font-weight: bolder;
+}
+
+.detail-name {
+  color: white;
+  font-size: 3em;
 }
 
 .divider {

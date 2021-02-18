@@ -11,6 +11,7 @@ import SearchPage from './SearchPage/SearchPage';
 import HomePage from './HomePage/HomePage';
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+import DetailPage from './DetailPage/DetailPage'
 
 export default class App extends Component {
   render() {
@@ -25,9 +26,14 @@ export default class App extends Component {
                 render={(routerProps) => <HomePage {...routerProps} />} 
               />
               <Route 
-                path="/search" 
+                path="/pokemon" 
                 exact
                 render={(routerProps) => <SearchPage {...routerProps} />} 
+              />
+              <Route 
+                path="/pokemon/:name" 
+                exact
+                render={(routerProps) => <DetailPage {...routerProps} />} 
               />
             </Switch>
           <Footer />
