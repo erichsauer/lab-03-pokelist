@@ -7,7 +7,7 @@ export default withRouter(class Header extends Component {
         return (
             <header>
                 <div className='header'>
-                    Pokédex Search
+                    Geoffrey's Pokédex
                 </div>
                 <div className='link'>
                     <div>
